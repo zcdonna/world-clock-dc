@@ -24,6 +24,18 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  //Chicago
+  let chicagoElement = document.querySelector("#chicago");
+  if (chicagoElement) {
+    let chicagoDateElement = chicagoElement.querySelector(".date");
+    let chicagoTimeElement = chicagoElement.querySelector(".time");
+    let chicagoTime = moment().tz("America/Chicago");
+
+    chicagoDateElement.innerHTML = chicagoTime.format("MMMM	Do YYYY");
+    chicagoTimeElement.innerHTML = chicagoTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
